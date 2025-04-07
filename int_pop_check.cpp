@@ -5,9 +5,6 @@ class int_pop
 {
 private:
   int value01;
-  int value02;
-  float value10;
-  float value11;
   int one;
   int result;
   bool Judge;
@@ -25,9 +22,6 @@ public:
 int_pop::~int_pop(void)
 {
   this->value01 = (int)NULL;
-  this->value02 = (int)NULL;
-  this->value10 = (float)NULL;
-  this->value11 = (float)NULL;
   this->one = (int)NULL;
   this->result = (int)NULL;
   this->Judge = (bool)NULL;
@@ -43,9 +37,6 @@ bool int_pop::getJudge(void)
 void int_pop::setValue(int value1)
 {
   this->value01 = 0;
-  this->value02 = 0;
-  this->value10 = 0.0;
-  this->value11 = 0.0;
   this->one = 0;
   this->result = 0;
   this->value01 = value1;
@@ -57,13 +48,10 @@ void int_pop::setValue(int value1)
     std::cout << "The input value is scale out." << std::endl;
     this->setJudge(false);
   } else {
-    this->value10 = (float)this->value01 / 10.0;
-    this->value02 = (int)this->value10;
-    this->value11 = this->value10 - (float)this->value02;
-    this->one = (int)(this->value11 * 10.0);
-    this->result = (this->value01 - this->one) / 10;
+    this->one = this->value01 % 10;
+    this->result = this->value01 / 10;
     this->setJudge(true);
-  }
+    }
 }
 int int_pop::getFirst(void)
 {
@@ -134,8 +122,8 @@ public:
 int_pop_check::~int_pop_check(void)
 {
   this->value01 = (int)NULL;
-  this->value02 = (int)NULL;
-  this->value03 = (int)NULL;
+    this->value02 = (int)NULL;
+    this->value03 = (int)NULL;
   this->Judge = (bool)NULL;
 }
 void int_pop_check::setJudge(bool judge1)
@@ -149,8 +137,8 @@ bool int_pop_check::getJudge(void)
 void int_pop_check::setValue(int value1)
 {
   this->value01 = 0;
-  this->value02 = 0;
-  this->value03 = 0;
+    this->value02 = 0;
+    this->value03 = 0;
   this->value01 = value1;
   if (this->value01 > 9999999) {
     std::cout << "The Input value is scale out." << std::endl;
