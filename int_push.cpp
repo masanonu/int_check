@@ -110,13 +110,11 @@ class int_push
 private:
   int value01;
   int result;
-  std::string str1;
   void space(int value);
   int_pop object02;
 public:
   void setValue(int value1);
   int getResult(void);
-  void check(int value2);
   void show(void);
   ~int_push(void);
 };
@@ -124,63 +122,6 @@ int_push::~int_push(void)
 {
   this->value01 = (int)NULL;
   this->result = (int)NULL;
-}
-void int_push::check(int value2)
-{
-  if (value2 == 76) {
-    this->result = 77;
-    this->object02.setFirst(7);
-  } else if (value2 == 98) {
-    this->result = 99;
-    this->object02.setFirst(9);
-  } else {
-    this->str1 = to_string(value2);
-    std::regex reg01(R"(\d+10$)");
-    std::regex reg02(R"(\d+21$)");
-    std::regex reg03(R"(\d+32$)");
-    std::regex reg04(R"(\d+43$)");
-    std::regex reg05(R"(\d+54$)");
-    std::regex reg06(R"(\d+65$)");
-    std::regex reg07(R"(\d+76$)");
-    std::regex reg08(R"(\d+87$)");
-    std::regex reg09(R"(\d+98$)");
-    if (std::regex_search(this->str1, reg01) != false) {
-      this->result = stoi(str1) + 1;
-      this->object02.setFirst(1);
-    }
-  if (std::regex_search(this->str1, reg02) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(2);    
-  }
-  if (std::regex_search(this->str1, reg03) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(3);
-  }
-  if (std::regex_search(this->str1, reg04) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(4);    
-  }
-  if (std::regex_search(this->str1, reg05) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(5);    
-  }
-  if (std::regex_search(this->str1, reg06) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(6);    
-  }
-  if (std::regex_search(this->str1, reg07) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(7);    
-  }
-  if (std::regex_search(this->str1, reg08) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(8);    
-  }
-  if (std::regex_search(this->str1, reg09) != false) {
-    this->result = stoi(str1) + 1;
-    this->object02.setFirst(9);    
-  }
-  }
 }
 void int_push::setValue(int value1)
 {
@@ -190,7 +131,6 @@ void int_push::setValue(int value1)
   this->value01 = abs(this->value01);
   this->object02.setValue(this->value01);
   this->result = this->value01 * 10 + this->object02.getFirst();
-  this->check(this->result);
 }
 int int_push::getResult(void)
 {
